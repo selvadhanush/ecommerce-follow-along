@@ -14,3 +14,109 @@ Scalability: Designed to handle high traffic with efficiency.
 Frontend Framework: [e.g., react js]
 Backend Framework: [e.g., Node.js + Express.js, Django]
 Database: [e.g., MongoDB,]
+
+# Milestone 2
+
+# React + Tailwind CSS + React Router Project
+
+A simple **React.js** project styled with **Tailwind CSS** and using **React Router DOM** for navigation. This project provides a clean, minimalist UI with a centered "Welcome to Home" text and basic routing.
+
+## 🚀 Features
+- **React.js Frontend** – Fast and efficient component-based development.
+- **Tailwind CSS** – Utility-first styling for rapid UI development.
+- **React Router DOM** – Enables client-side routing and navigation.
+- **Minimalist UI** – A clean and simple layout with centered content.
+- **Fully Responsive** – Optimized for different screen sizes.
+
+## 🛠 Tech Stack
+- **Frontend Framework:** React.js
+- **Styling:** Tailwind CSS
+- **Routing:** React Router DOM
+- **Build Tool:** Vite (Optional, if used)
+
+---
+
+## 📌 Installation & Setup
+
+### ⏳ Prerequisites
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (includes npm)
+- npm or yarn (package manager)
+
+### 📦 Install Dependencies
+If you haven’t set up **Tailwind CSS** and **React Router DOM** yet, follow these steps:
+
+#### **1️⃣ Create a new React project (if not already created)**
+```sh
+npx create-react-app my-project
+cd my-project
+```
+
+#### **2️⃣ Install Tailwind CSS**
+```sh
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+#### **3️⃣ Install React Router DOM**
+```sh
+npm install react-router-dom
+```
+
+---
+
+## ⚙️ Configure Tailwind CSS
+Modify `tailwind.config.js` to include your source files:
+
+```js
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+### 🎨 Include Tailwind in `index.css`
+Replace the contents of `src/index.css` with:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+---
+
+## 🛤️ Set Up React Router
+Modify `src/App.js` to include routing:
+
+```jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+---
+
+## 🚀 Start the Project
+Run the following command:
+```sh
+npm start  # or yarn start
+```
+The app will run on `http://localhost:5176/login`
