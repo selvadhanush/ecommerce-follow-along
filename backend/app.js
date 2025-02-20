@@ -1,13 +1,24 @@
-const express= require("express")
-const app=express()
+const express = require("express");
+// const cors=require("cors");
+const ErrorMiddleware = require("./middleware/error");
 
-app.use(express.json())
+const app = express();
+app.use(express.json());
 
 
-// const{catchAsyncError} =require("./middleware/catchAsyncError")
-const{catchAsyncError} =require("../middleware/catchAsyncError")
-const {ErrorHandler} =require("./utils/errorHandler")
-const errMiddleware =require("./middleware/error")
+// app.use(cors({
+//   origin: ["http://localhost:5173"],
+//   credentials: true, // enable cookies
+// }));
 
-app.use(errMiddleware)
-module.exports={app}
+const {userRoute} = require("./controllers/userroute")
+
+app.get("/test", async (req, res) => {
+  res.send("hello.....");
+});
+
+app.use("/user",userRoute)
+
+app.use(ErrorMiddleware);
+
+module.exports = { app };

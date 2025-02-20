@@ -1,63 +1,30 @@
-const moongose=require('moongose')
+let mongoose = require("mongoose")
 
-
-const addressSchema =moongose.schema({
-   
-   Country:{
-        type:String,
-        required:true
-   },
-   State:{
-       type:String,
-       required:true
-   },
-   Pincode:{
-      type:Number,
-      required:true   
-   },
-   Houseno:{
-    type:Number,
-     requried:true
-   },
-
-   
-})
-
-
-
-const userSchema=moongose.schema({
+const userSchema =mongoose.Schema({
     name:{
-        type: String,
-        required: true
+        type:String,
+        require:true
     },
     email:{
-        type: String,
-        required:true,
-        unique:true
+        type:String,
+        require:true
     },
-    Password:{
-        type: String,
-        requried:true
+    password:{
+        type:String,
+        require:true
     },
     role:{
         type:String,
         default:"user"
     },
-    Address:{
-        type: addressSchema,
-
-    },
-    createAt:{
-        type:Date,
-        default:Date.now()
-    },
     isActivated:{
-         type:Boolean,
-         default:false
+        type:Boolean,
+        default:false
     }
+
 })
 
 
-const UserModel=moongose.model("user",userSchema)
+const UserModel =mongoose.model("user",userSchema)
 
 module.exports={UserModel}

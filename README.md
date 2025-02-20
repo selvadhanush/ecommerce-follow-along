@@ -120,3 +120,21 @@ Run the following command:
 npm start  # or yarn start
 ```
 The app will run on `http://localhost:5176/login`
+
+
+
+**Milestonre-9**
+
+**CreateProduct Component**
+
+Overview
+
+The CreateProduct component is a React functional component that provides a form for users to create a new product. It includes input fields for product details such as email, name, description, category, tag, price, stock, and images. The component also handles form state management using the useState hook.
+
+Features
+
+Users can enter product details such as name, email, description, category, price, stock, and tags.
+
+Users can upload images, which are previewed before submission.
+
+The form state is mand image previews.

@@ -1,8 +1,10 @@
-const { connection } = require("mongoose")
+const { connection } = require("./db/connection")
 const {app}=require("./app")
 require("dotenv").config()
+
+
 const port=process.env.PORT 
-app.get("./testing",async(req,res)=>{
+app.get("/testing",async(req,res)=>{
     res.send("hellow")
 })
 app.listen(port,async()=>{
